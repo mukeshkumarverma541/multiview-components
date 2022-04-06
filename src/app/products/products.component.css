@@ -1,0 +1,16 @@
+img {
+    max-width: 200px;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.card {
+    padding: 10px;
+}

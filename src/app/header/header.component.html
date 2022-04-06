@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-5">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/"><img src="https://cdn-icons-png.flaticon.com/512/36/36447.png" class="img-fluid" style="max-width: 60px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ng-container *ngIf="headerNav">
+                <app-menu></app-menu>
+            </ng-container>
+            <ng-container *ngIf="goBackLinks.text">
+                <div class="me-auto">
+                    <div>
+                        <a routerLink="{{goBackLinks.url}}" routerLinkActive="router-link-active" class="btn btn-outline-primary">
+                            {{goBackLinks.text}}
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="loggedInUser">
+                <div class="me-3" style="margin-left: auto;">
+                    <div style="white-space: nowrap;">
+                        Welcome <strong classs="text-success">{{loggedInUser}}</strong>
+                    </div>
+                </div>
+                <div>
+                    <a href="" class="btn btn-outline-primary">Logout</a>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="contactDetails">
+                <div style="margin-left: auto">
+                    <p class="mb-0"> mkverma541@gmail.com</p>
+                    <p> 9310099270</p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!loggedInUser">
+                <div style="margin-left: auto;">
+                    <a [routerLink]="['login']" class="btn btn-success">Sign in</a>
+                </div>
+            </ng-container>
+
+
+
+        </div>
+    </div>
+</nav>
